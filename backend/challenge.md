@@ -6,7 +6,7 @@ A Yube está criando um sistema para auxiliar o processos de aprovação de seus
 
 Criar os endpoints para adicionar, editar, excluir e listar os clientes da Yube. Cada cliente deve ter os seguintes atributos: CNPJ, Razão Social, Número de Funcionarios, Numero de Processos.
 
-`OBS: Importante resaltar que quando o cliente for excluido do sistema, as informações não deveram ser perdidas.`
+`OBS: Importante resaltar que quando o cliente for excluido do sistema, as informações não deverão ser perdidas.`
 
 ##### CRIAÇÃO DE PROCESSOS DO CLIENTE
 
