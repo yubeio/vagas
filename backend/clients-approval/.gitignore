@@ -17,4 +17,5 @@
 !/log/.keep
 !/tmp/.keep
 
+.env.development
 .byebug_history

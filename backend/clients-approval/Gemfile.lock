@@ -43,6 +43,10 @@ GEM
     byebug (10.0.1)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
+    dotenv (2.2.1)
+    dotenv-rails (2.2.1)
+      dotenv (= 2.2.1)
+      railties (>= 3.2, < 5.2)
     erubi (1.7.1)
     ffi (1.9.23)
     globalid (0.4.1)
@@ -65,6 +69,8 @@ GEM
     nio4r (2.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    paranoia (2.4.0)
+      activerecord (>= 4.0, < 5.2)
     puma (3.11.3)
     rack (2.0.4)
     rack-test (0.8.3)
@@ -123,7 +129,9 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  dotenv-rails
   listen (>= 3.0.5, < 3.2)
+  paranoia (~> 2.2)
   puma (~> 3.7)
   rails (~> 5.1.5)
   spring
