@@ -4,11 +4,12 @@ class YubeClientsController < ApplicationController
   def index
     @yube_clients = YubeClient.all
 
-    render json: @yube_clients
+    render json: @yube_clients, methods: :count_processes
+
   end
 
   def show
-    render json: @yube_client
+    render json: @yube_client, methods: :count_processes
   end
 
   def create
