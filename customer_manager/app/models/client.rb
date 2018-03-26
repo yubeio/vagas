@@ -1,0 +1,5 @@
+class Client < ApplicationRecord
+	validates_presence_of :username, :password
+
+	has_secure_password
+end
