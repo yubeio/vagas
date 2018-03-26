@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180326023031) do
+ActiveRecord::Schema.define(version: 20180326124051) do
 
   create_table "approval_processes", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20180326023031) do
     t.integer "employees_quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "deleted", default: false, null: false
   end
 
 end

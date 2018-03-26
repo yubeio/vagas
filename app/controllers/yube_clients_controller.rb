@@ -31,7 +31,7 @@ class YubeClientsController < ApplicationController
   end
 
   def destroy
-    @yube_client.destroy
+    @yube_client.delete
   end
 
   private

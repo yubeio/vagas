@@ -1,4 +1,6 @@
 class YubeClient < ApplicationRecord
+  include Mixins::Tombstoneable
+
   has_many :approval_processes
 
   def count_processes
