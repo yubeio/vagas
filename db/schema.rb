@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180326021411) do
+ActiveRecord::Schema.define(version: 20180326023031) do
 
   create_table "approval_processes", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20180326021411) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "yube_client_id"
+    t.index ["yube_client_id"], name: "index_approval_processes_on_yube_client_id"
   end
 
   create_table "yube_clients", force: :cascade do |t|

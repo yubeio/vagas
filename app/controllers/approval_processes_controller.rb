@@ -40,6 +40,6 @@ class ApprovalProcessesController < ApplicationController
   end
 
   def approval_process_params
-    params.require(:approval_process).permit(:name, :description, :status)
+    params.require(:approval_process).permit(:name, :description, :status, :yube_client_id)
   end
 end
