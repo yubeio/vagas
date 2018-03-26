@@ -1,0 +1,14 @@
+<h1>Yube Teste</h1>
+<%= link_to 'Criar cliente', new_client_path %>
+
+<br>
+<br>
+<h3>Todos os clientes</h1>
+<% @client.each do |c| %>
+  <ul>
+    <li><%= c.cnpj %></li>
+    <li><%= c.razao_social %></li>
+    <li><%= c.n_funcionarios %></li>
+    <li><%= c.n_processos %></li>
+  </ul>
+<% end %>

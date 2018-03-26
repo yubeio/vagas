@@ -1,0 +1,24 @@
+<h1>Adicionar cliente</h1>
+
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+
+   <h3>Você precisa preencher todos os campos</h3>
+    <% @client.errors.full_messages.each do |msg| %>
+      <p><%= msg %></P>
+    <% end %>
+  <% end %>
+  <%= f.label :cnpj, 'CNPJ' %>
+  <%= f.text_field :cnpj%>
+  <br>
+  <%= f.label :razao_social, 'Razão Social' %>
+  <%= f.text_field :razao_social %>
+  <br>
+  <%= f.label :n_funcionarios, 'Número de Funcionarios' %>
+  <%= f.number_field :n_funcionarios %>
+  <br>
+  <%= f.label :n_processos, 'Número de Processos' %>
+  <%= f.number_field :n_processos %>
+  <br>
+  <%= f.submit 'Salvar' %>
+<% end %>
