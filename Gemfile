@@ -8,6 +8,7 @@ end
 gem 'rails', '~> 5.1.5'
 gem 'sqlite3'
 gem 'puma', '~> 3.7'
+gem 'enumerate_it'
 
 group :development, :test do
   gem 'pry-meta', '0.0.10'
