@@ -1,0 +1,2 @@
+class YubeClient < ApplicationRecord
+end
