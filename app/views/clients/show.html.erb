@@ -4,7 +4,28 @@
     <li><%= @client.cnpj %></li>
     <li><%= @client.razao_social %></li>
     <li><%= @client.n_funcionarios %></li>
-    <li><%= @client.n_processos %></li>
   </ul>
 <br>
+  
+<h1>Lista de processos
+<h3> <%= flash[:success] %> </h3>
+<%= link_to 'Novo processo', new_client_proccess_path(@client) %>
+<br>
+<% if @proccess.empty? %>
+  <p>Você ainda não possui processos cadastrados</p>
+<% else %>
+  <% @proccess.each do |p| %>
+    <ul>
+      <li> <%= p.name %> </li>
+      <li> <%= p.description %> </li>
+      <li> <%= p.status %> </li>
+      <li> <%= p.created_at %> </li>
+      <li> <%= p.updated_at %> </li>
+      <li> <%= link_to 'Editar', edit_client_proccess_path(@client, p.id) %> </li>
+      <li> <%= link_to 'Aprovar', client_proccess_aproved_path(@client, p.id), method: 'post' %> </li>
+      <li> <%= link_to 'Excluir', client_proccess_rejected_path(@client, p.id), method: 'post' %> </li>
+    </ul>
+  <br>
+  <% end %>
+<% end %>
 <%= link_to 'Voltar', root_path %>

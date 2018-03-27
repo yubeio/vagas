@@ -9,14 +9,13 @@ feature 'User add a client' do
     fill_in 'CNPJ', with: '123.456.789-00'
     fill_in 'Razão Social', with: 'Google LTDA'
     fill_in 'Número de Funcionarios', with: 10
-    fill_in 'Número de Processos', with: 5
 
     click_on 'Salvar'
 
     expect(page).to have_css('li', text: '123.456.789-00')
     expect(page).to have_css('li', text: 'Google LTDA')
     expect(page).to have_css('li', text: '10')
-    expect(page).to have_css('li', text: '5')
+    expect(page).to have_css('li', text: '0')
   end
 
   scenario 'and has fill all fields' do 
@@ -26,7 +25,6 @@ feature 'User add a client' do
     fill_in 'CNPJ', with: ''
     fill_in 'Razão Social', with: ''
     fill_in 'Número de Funcionarios', with: ''
-    fill_in 'Número de Processos', with: ''
 
     click_on 'Salvar'
 

@@ -1,0 +1,17 @@
+
+<%= form_for([@client, @proccess]) do |f| %>
+  <% if @proccess.errors.any? %>
+   <h3>Você precisa preencher todos os campos</h3>
+    <% @proccess.errors.full_messages.each do |msg| %>
+      <p><%= msg %></P>
+    <% end %>
+  <% end %>
+
+  <%= f.label :name, 'Nome' %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :description, 'Descrição' %>
+  <%= f.text_area :description %>
+  <br>
+  <%= f.submit 'Salvar' %>
+<% end %>

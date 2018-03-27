@@ -10,15 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180325201603) do
+ActiveRecord::Schema.define(version: 20180327201245) do
 
   create_table "clients", force: :cascade do |t|
     t.string "razao_social"
     t.integer "n_funcionarios"
-    t.integer "n_processos"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "cnpj"
+    t.integer "status", default: 0
+  end
+
+  create_table "proccesses", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "status", default: 1
+    t.integer "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_proccesses_on_client_id"
   end
 
 end

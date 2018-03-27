@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
 
   def index
-    @client = Client.all
+    @clients = Client.where("status = ?", 0)
+    @client = Client.new
   end
 
 end
