@@ -13,6 +13,8 @@ gem 'enumerate_it'
 group :development, :test do
   gem 'pry-meta', '0.0.10'
   gem 'rspec-rails', '3.7'
+  gem 'capybara', '2.18'
+  gem 'factory_bot_rails', '4.8.2'
 end
 
 group :development do
