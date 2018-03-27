@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Processos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Situação</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @processos.each do |processo| %>
+      <% if processo.status == 1 %>
+        <tr>
+          <td><%= processo.nome %></td>
+          <td><%= processo.descricao %></td>
+          <td><%= processo.situacao %></td>
+          <td><%= link_to 'Mostrar', processo %></td>
+          <td><%= link_to 'Editar', edit_processo_path(processo) %></td>
+          <td><%= link_to 'Apagar', processo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Home', home_index_path %>
+<%= link_to 'Novo Processo', new_processo_path %>

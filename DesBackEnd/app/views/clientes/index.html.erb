@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Clientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>CNPJ</th>
+      <th>Razão Social</th>
+      <th>Numero Funcionarios</th>
+      <th>Processo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <% if cliente.status == 1 %>
+        <tr>
+          <td><%= cliente.cnpj %></td>
+          <td><%= cliente.razao_social %></td>
+          <td><%= cliente.num_funcionarios %></td>
+          <td><%= cliente.processo.descricao %></td>
+          <td><%= link_to 'Mostrar', cliente %></td>
+          <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
+          <td><%= link_to 'Apagar', cliente, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Home', home_index_path %>
+<%= link_to 'Novo Cliente', new_cliente_path %>

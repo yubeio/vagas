@@ -1,0 +1,243 @@
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "clientes"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cnpj" varchar, "razao_social" varchar, "num_funcionarios" integer, "processo_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE  INDEX "index_clientes_on_processo_id" ON "clientes" ("processo_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "processos"[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "processos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "descricao" text, "situacao" varchar, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180327004551)[0m
+  [1m[35m (6.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180327003825);
+
+[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2018-03-27 20:36:24.047817"], ["updated_at", "2018-03-27 20:36:24.047817"]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.8ms)[0m  [1m[31mDELETE FROM "clientes"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "clientes" ("cnpj", "razao_social", "num_funcionarios", "status", "created_at", "updated_at", "id", "processo_id") VALUES ('MyString', 'MyString', 1, 1, '2018-03-27 20:36:24.225133', '2018-03-27 20:36:24.225133', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "clientes" ("cnpj", "razao_social", "num_funcionarios", "status", "created_at", "updated_at", "id", "processo_id") VALUES ('MyString', 'MyString', 1, 1, '2018-03-27 20:36:24.225133', '2018-03-27 20:36:24.225133', 298486374, 298486374)[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "processos"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "processos" ("nome", "descricao", "situacao", "status", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, '2018-03-27 20:36:24.234670', '2018-03-27 20:36:24.234670', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "processos" ("nome", "descricao", "situacao", "status", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 'MyString', 1, '2018-03-27 20:36:24.234670', '2018-03-27 20:36:24.234670', 298486374)[0m
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+HomeControllerTest: test_should_get_index
+-----------------------------------------
+Started GET "/home/index" for 127.0.0.1 at 2018-03-27 17:36:24 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 451ms (Views: 439.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+ProcessosControllerTest: test_should_create_processo
+----------------------------------------------------
+  [1m[36mProcesso Load (0.4ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "processos"[0m
+Started POST "/processos" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ProcessosController#create as HTML
+  Parameters: {"processo"=>{"descricao"=>"MyText", "nome"=>"MyString", "situacao"=>"MyString", "status"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "processos" ("nome", "descricao", "situacao", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["descricao", "MyText"], ["situacao", "MyString"], ["status", 1], ["created_at", "2018-03-27 20:36:25.148811"], ["updated_at", "2018-03-27 20:36:25.148811"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/processos/980190963
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "processos"[0m
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" ORDER BY "processos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ProcessosControllerTest: test_should_show_processo
+--------------------------------------------------
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/processos/980190962" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ProcessosController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering processos/show.html.erb within layouts/application
+  Rendered processos/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 12ms (Views: 5.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+ProcessosControllerTest: test_should_update_processo
+----------------------------------------------------
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/processos/980190962" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ProcessosController#update as HTML
+  Parameters: {"processo"=>{"descricao"=>"MyText", "nome"=>"MyString", "situacao"=>"MyString", "status"=>"1"}, "id"=>"980190962"}
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/processos/980190962
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+ProcessosControllerTest: test_should_get_new
+--------------------------------------------
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/processos/new" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ProcessosController#new as HTML
+  Rendering processos/new.html.erb within layouts/application
+  Rendered processos/_form.html.erb (38.6ms)
+  Rendered processos/new.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------
+ProcessosControllerTest: test_should_destroy_processo
+-----------------------------------------------------
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "processos"[0m
+Started DELETE "/processos/980190962" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ProcessosController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[33mUPDATE Processos SET status = 0 WHERE ID = 980190962[0m
+Redirected to http://www.example.com/processos
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "processos"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+ProcessosControllerTest: test_should_get_index
+----------------------------------------------
+  [1m[36mProcesso Load (0.4ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/processos" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ProcessosController#index as HTML
+  Rendering processos/index.html.erb within layouts/application
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT "processos".* FROM "processos"[0m
+  Rendered processos/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+ProcessosControllerTest: test_should_get_edit
+---------------------------------------------
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/processos/980190962/edit" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ProcessosController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering processos/edit.html.erb within layouts/application
+  Rendered processos/_form.html.erb (69.8ms)
+  Rendered processos/edit.html.erb within layouts/application (72.2ms)
+Completed 200 OK in 81ms (Views: 76.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+ClientesControllerTest: test_should_show_cliente
+------------------------------------------------
+  [1m[36mCliente Load (0.5ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/clientes/980190962" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCliente Load (0.3ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering clientes/show.html.erb within layouts/application
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered clientes/show.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 39ms (Views: 33.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ClientesControllerTest: test_should_update_cliente
+--------------------------------------------------
+  [1m[36mCliente Load (0.2ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/clientes/980190962" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ClientesController#update as HTML
+  Parameters: {"cliente"=>{"cnpj"=>"MyString", "num_funcionarios"=>"1", "processo_id"=>"980190962", "razao_social"=>"MyString", "status"=>"1"}, "id"=>"980190962"}
+  [1m[36mCliente Load (0.4ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/980190962
+Completed 302 Found in 13ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------
+ClientesControllerTest: test_should_destroy_cliente
+---------------------------------------------------
+  [1m[36mCliente Load (0.3ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "clientes"[0m
+Started DELETE "/clientes/980190962" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ClientesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCliente Load (0.4ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[33mUPDATE Clientes SET status = 0 WHERE ID = 980190962[0m
+Redirected to http://www.example.com/clientes
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "clientes"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+ClientesControllerTest: test_should_create_cliente
+--------------------------------------------------
+  [1m[36mCliente Load (0.4ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "clientes"[0m
+Started POST "/clientes" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"cliente"=>{"cnpj"=>"MyString", "num_funcionarios"=>"1", "processo_id"=>"980190962", "razao_social"=>"MyString", "status"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProcesso Load (0.6ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "clientes" ("cnpj", "razao_social", "num_funcionarios", "processo_id", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cnpj", "MyString"], ["razao_social", "MyString"], ["num_funcionarios", 1], ["processo_id", 980190962], ["status", 1], ["created_at", "2018-03-27 20:36:25.530527"], ["updated_at", "2018-03-27 20:36:25.530527"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/clientes/980190963
+Completed 302 Found in 13ms (ActiveRecord: 3.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "clientes"[0m
+  [1m[36mCliente Load (0.4ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" ORDER BY "clientes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+ClientesControllerTest: test_should_get_edit
+--------------------------------------------
+  [1m[36mCliente Load (0.4ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/clientes/980190962/edit" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mCliente Load (0.2ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering clientes/edit.html.erb within layouts/application
+  Rendered clientes/_form.html.erb (19.8ms)
+  Rendered clientes/edit.html.erb within layouts/application (23.1ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+ClientesControllerTest: test_should_get_index
+---------------------------------------------
+  [1m[36mCliente Load (0.3ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/clientes" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb within layouts/application
+  [1m[36mCliente Load (0.5ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 298486374], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered clientes/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+ClientesControllerTest: test_should_get_new
+-------------------------------------------
+  [1m[36mCliente Load (0.3ms)[0m  [1m[34mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/clientes/new" for 127.0.0.1 at 2018-03-27 17:36:25 -0300
+Processing by ClientesController#new as HTML
+  Rendering clientes/new.html.erb within layouts/application
+  [1m[36mProcesso Load (0.5ms)[0m  [1m[34mSELECT "processos".* FROM "processos" WHERE "processos"."status" = ?[0m  [["status", 1]]
+  Rendered clientes/_form.html.erb (11.0ms)
+  Rendered clientes/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m

@@ -1,0 +1,37 @@
+<%= form_with(model: processo, local: true) do |form| %>
+  <% if processo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(processo.errors.count, "error") %> prohibited this processo from being saved:</h2>
+
+      <ul>
+      <% processo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, id: :processo_nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_area :descricao, id: :processo_descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :situacao %>
+    <%= form.select :situacao, options_for_select([["Pendente", "Pendente"], ["Aprovado", "Aprovado"], ["Rejeitado", "Rejeitado"]]) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status, id: :processo_status, value: '1', :readonly => true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

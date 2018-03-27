@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>CNPJ:</strong>
+  <%= @cliente.cnpj %>
+</p>
+
+<p>
+  <strong>Razão Social:</strong>
+  <%= @cliente.razao_social %>
+</p>
+
+<p>
+  <strong>Número Funcionarios:</strong>
+  <%= @cliente.num_funcionarios %>
+</p>
+
+<p>
+  <strong>Processo:</strong>
+  <%= @cliente.processo.descricao %>
+</p>
+
+<%= link_to 'Editar', edit_cliente_path(@cliente) %> |
+<%= link_to 'Voltar', clientes_path %>

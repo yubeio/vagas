@@ -1,0 +1,2 @@
+class Processo < ApplicationRecord
+end

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cnpj: MyString
+  razao_social: MyString
+  num_funcionarios: 1
+  processo: one
+  status: 1
+
+two:
+  cnpj: MyString
+  razao_social: MyString
+  num_funcionarios: 1
+  processo: two
+  status: 1

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @processo.nome %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @processo.descricao %>
+</p>
+
+<p>
+  <strong>Situação:</strong>
+  <%= @processo.situacao %>
+</p>
+
+<%= link_to 'Editar', edit_processo_path(@processo) %> |
+<%= link_to 'Voltar', processos_path %>
