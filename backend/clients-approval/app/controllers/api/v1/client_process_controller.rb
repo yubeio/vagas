@@ -30,7 +30,7 @@ module Api
       def destroy
         @record.transaction do
           @process.destroy
-          ::Operations::Client.new.(@process,@process.client_id).sub_process_total
+          ::Operations::ClientUpdates.new(@process,@process.client_id).sub_process_total
           render json: { message: 'Process was destroyed' }, status: 200
         end
       rescue StandardError => e
@@ -41,12 +41,15 @@ module Api
 
       def process_create_params
         @client = Client.where(cnpj: params[:client_cnpj]).first
-        validate_client
+        invalid = invalid_client?
+        return render invalid if invalid
         @process_params = params[:processes].map { |param| Translators::Process.translate(param[:process], @client.id) }
       end
 
-      def validate_client
-        render json: { error: "You can't create a process for a deleted client" } unless @client.deleted_at.nil?
+      def invalid_client?
+        return  { json: { error: 'Client not found with the passed CNPJ, please check and try again' }, code: 422 } if @client.blank?
+        return  { json: { error: "You can't create a process for a deleted client" }, code: 422 }unless @client.deleted_at.nil?
+        false
       end
 
       def set_process

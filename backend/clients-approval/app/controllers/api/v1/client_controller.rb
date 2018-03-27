@@ -8,15 +8,21 @@ module Api
       def index
         @clients = Client.all
         render json: { clients: @clients }
+      rescue StandardError => e
+        render json: { error: "Error while trying to list Clients => #{e}" }, status: :unprocessable_entity
       end
 
       def show
         render json: {client: @client}
+      rescue StandardError => e
+        render json: { error: "Error while trying to show Client => #{e}" }, status: :unprocessable_entity
       end
 
       def clients_with_deleted
         @clients = Client.with_deleted
         render json: { clients: @clients }
+      rescue StandardError => e
+        render json: { error: "Error while trying to show Deleted Clients => #{e}" }, status: :unprocessable_entity
       end
 
       def create
