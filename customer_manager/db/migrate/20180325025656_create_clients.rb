@@ -4,7 +4,6 @@ class CreateClients < ActiveRecord::Migration[5.1]
       t.string :username
       t.string :domain
       t.string :password_digest
-
       t.timestamps
     end
   end
