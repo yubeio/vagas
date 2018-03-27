@@ -101,6 +101,7 @@ GEM
     public_suffix (3.0.2)
     puma (3.11.3)
     rack (2.0.4)
+    rack-cors (1.0.2)
     rack-test (0.8.3)
       rack (>= 1.0, < 3)
     rails (5.1.5)
@@ -182,6 +183,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   pry-meta (= 0.0.10)
   puma (~> 3.7)
+  rack-cors (= 1.0.2)
   rails (~> 5.1.5)
   rspec-rails (= 3.7)
   spring
@@ -190,4 +192,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   1.15.4
+   1.16.1
