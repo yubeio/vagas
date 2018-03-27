@@ -45,6 +45,23 @@ rails s
 
 ```
 
+## Acessando os endpoints
+
+- Após subir o server com `rails s` será possível acessar os endpoints.
+- Podendo ser testado neste site -> https://resttesttest.com inserindo como
+endpoint:
+
+Method | URL
+-------|------------
+GET | http://localhost:3000/yube_clients
+GET | http://localhost:3000/approval_processes
+POST | http://localhost:3000/yube_clients
+POST | http://localhost:3000/approval_processes
+PATCH | http://localhost:3000/yube_clients/id
+PATCH | http://localhost:3000/approval_process/id
+DELETE | http://localhost:3000/yube_clients/id
+DELETE | http://localhost:3000/approval_process/id
+
 ## YubeClient
 
 Os clientes possuem os seguintes atributos:
