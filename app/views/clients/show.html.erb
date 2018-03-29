@@ -23,7 +23,7 @@
       <li> <%= p.updated_at %> </li>
       <li> <%= link_to 'Editar', edit_client_proccess_path(@client, p.id) %> </li>
       <li> <%= link_to 'Aprovar', client_proccess_aproved_path(@client, p.id), method: 'post' %> </li>
-      <li> <%= link_to 'Excluir', client_proccess_rejected_path(@client, p.id), method: 'post' %> </li>
+      <li> <%= link_to 'Rejeitar', client_proccess_rejected_path(@client, p.id), method: 'post' %> </li>
     </ul>
   <br>
   <% end %>

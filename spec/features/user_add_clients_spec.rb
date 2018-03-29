@@ -30,4 +30,13 @@ feature 'User add a client' do
 
     expect(page).to have_css('h3', text: 'Você precisa preencher todos os campos')
   end
+
+  scenario 'delete a client' do 
+    Client.create(cnpj: '123.456.789-00', razao_social: 'alura ltda', n_funcionarios: 10)
+    visit root_path
+
+    click_on 'Excluir'
+
+    expect(page).to have_css('p', text: 'Cliente excluido')
+  end
 end
