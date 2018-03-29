@@ -12,10 +12,10 @@ feature 'User add a client' do
 
     click_on 'Salvar'
 
-    expect(page).to have_css('li', text: '123.456.789-00')
-    expect(page).to have_css('li', text: 'Google LTDA')
-    expect(page).to have_css('li', text: '10')
-    expect(page).to have_css('li', text: '0')
+    expect(page).to have_content('123.456.789-00')
+    expect(page).to have_content('Google LTDA')
+    expect(page).to have_content('10')
+    expect(page).to have_content('0')
   end
 
   scenario 'and has fill all fields' do 
@@ -37,6 +37,6 @@ feature 'User add a client' do
 
     click_on 'Excluir'
 
-    expect(page).to have_css('p', text: 'Cliente excluido')
+    expect(page).to have_content('Cliente excluido')
   end
 end

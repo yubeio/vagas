@@ -33,7 +33,7 @@ class ProccessesController < ApplicationController
   def aproved
     proccess = Proccess.find(params[:proccess_id])
     if proccess.aproved!
-      flash[:notice] = 'Proposta aceita com sucesso'
+      flash[:success] = 'Proposta aceita com sucesso'
       redirect_to client_path(proccess.client)
     end
   end

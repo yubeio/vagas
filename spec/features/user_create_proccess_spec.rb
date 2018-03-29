@@ -13,10 +13,9 @@ feature 'User create a proccess' do
     
     click_on 'Salvar'
 
-    expect(page).to have_css('h3', text: 'Processo cadastrado com sucesso')
-    expect(page).to have_css('li', text: 'Victor')
-    expect(page).to have_css('li', text: 'aqui está a descrição')
-    
+    expect(page).to have_content('Processo cadastrado com sucesso')
+    expect(page).to have_content('Victor')
+    expect(page).to have_content('aqui está a descrição')
   end
 
   scenario 'and have fill all fields' do 

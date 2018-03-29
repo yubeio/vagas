@@ -1,20 +1,47 @@
-<h1>Yube Teste</h1>
-<%= link_to 'Criar cliente', new_client_path %>
+<%= link_to 'Criar cliente', new_client_path, class: "btn btn-outline-primary" %>
 
 <br>
-<h3>Todos os clientes</h1>
-<p><%= flash[:notice] %></p>
+<h3>Todos os clientes</h3>
+<% if flash[:notice].present? %>
+<div class="alert alert-danger" role="alert">
+  <%= flash[:notice] %>
+</div>
+<% end %>
 <% if @clients.empty? %>
   <p>Você ainda não possui clientes cadastrados</p>
 <% else %>
-  <% @clients.each do |c| %>
-    <ul>
-      <li><%= link_to c.cnpj, client_path(c.id) %></li>
-      <li><%= c.razao_social %></li>
-      <li><%= c.n_funcionarios %></li>
-      <li><%= c.proccess.where({status: [1, 2]}).count %></li>
-      <li><%= link_to 'Editar', edit_client_path(c.id) %></h1>
-      <li><%= link_to 'Excluir', client_archived_path(c.id), method: 'post' %></h1>
-    </ul>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>CNPJ</th>
+        <th>Razão social</th>
+        <th>Número de funcionários</th>
+        <th>Número de processos</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @clients.each do |c| %>
+        <tr>
+          <td><%= link_to c.cnpj, client_path(c.id) %></td>
+          <td>
+            <%= c.razao_social %>
+          </td>
+          <td>
+            <%= c.n_funcionarios %>
+          </td>
+          <td>
+            <%= c.proccess.where({status: [1, 2]}).count %>
+          </td>
+          <td>
+            <%= link_to 'Editar', edit_client_path(c.id) %>
+          </td>
+          <td>
+            <%= link_to 'Excluir', client_archived_path(c.id), method: 'post' %>
+          </td>
+        </tr>
   <% end %>
+  </tbody>
+  </table>
 <% end %>

@@ -6,12 +6,14 @@
       <p><%= msg %></P>
     <% end %>
   <% end %>
-
+  <div class="form-group">
   <%= f.label :name, 'Nome' %>
-  <%= f.text_field :name %>
-  <br>
+  <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
   <%= f.label :description, 'Descrição' %>
-  <%= f.text_area :description %>
-  <br>
-  <%= f.submit 'Salvar' %>
+  <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <%= f.submit 'Salvar', class: "btn btn-outline-primary"%>
+  <%= link_to 'Voltar', client_path(@client), class: "btn btn-outline-primary" %>
 <% end %>

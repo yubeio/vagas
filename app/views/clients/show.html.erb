@@ -1,31 +1,71 @@
 <h1> Detalhes do Cliente</h1>
 <br>
-<ul>
-    <li><%= @client.cnpj %></li>
-    <li><%= @client.razao_social %></li>
-    <li><%= @client.n_funcionarios %></li>
+<ul class="list-group">
+    <li class="list-group-item">CNPJ: <%= @client.cnpj %></li>
+    <li class="list-group-item">Razão social: <%= @client.razao_social %></li>
+    <li class="list-group-item">Número de funcionários: <%= @client.n_funcionarios %></li>
   </ul>
 <br>
-  
-<h1>Lista de processos
-<h3> <%= flash[:success] %> </h3>
-<%= link_to 'Novo processo', new_client_proccess_path(@client) %>
+<h1>Lista de processos</h1>
+<% if flash[:success].present? %>
+  <div class="alert alert-success" role="alert">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+<% if flash[:notice].present? %>
+  <div class="alert alert-danger" role="alert">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+<%= link_to 'Novo processo', new_client_proccess_path(@client), class: "btn btn-outline-primary" %>
+<br>
 <br>
 <% if @proccess.empty? %>
   <p>Você ainda não possui processos cadastrados</p>
 <% else %>
-  <% @proccess.each do |p| %>
-    <ul>
-      <li> <%= p.name %> </li>
-      <li> <%= p.description %> </li>
-      <li> <%= p.status %> </li>
-      <li> <%= p.created_at %> </li>
-      <li> <%= p.updated_at %> </li>
-      <li> <%= link_to 'Editar', edit_client_proccess_path(@client, p.id) %> </li>
-      <li> <%= link_to 'Aprovar', client_proccess_aproved_path(@client, p.id), method: 'post' %> </li>
-      <li> <%= link_to 'Rejeitar', client_proccess_rejected_path(@client, p.id), method: 'post' %> </li>
-    </ul>
-  <br>
-  <% end %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>status</th>
+        <th>Criado em</th>
+        <th>Atualizado em</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @proccess.each do |p| %>
+        <tr>
+          <td>
+            <%= p.name %>
+          </td>
+          <td>
+            <%= p.description %> </li>
+          </td>
+          <td>
+            <%= p.status %>
+          </td>
+          <td>
+            <%= p.created_at.strftime("%d/%m/%Y - %I:%M%p") %> </li>
+          </td>
+          <td>
+            <%= p.updated_at.strftime("%d/%m/%Y - %I:%M%p") %> </li>
+          </td>
+          <td>
+            <%= link_to 'Editar', edit_client_proccess_path(@client, p.id), class: "btn btn-outline-primary" %>
+          </td>
+          <td>
+            <%= link_to 'Aprovar', client_proccess_aproved_path(@client, p.id), method: 'post', class: "btn btn-outline-primary" %>
+          </td>
+          <td>
+            <%= link_to 'Rejeitar', client_proccess_rejected_path(@client, p.id), method: 'post', class: "btn btn-outline-danger" %> 
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
 <% end %>
-<%= link_to 'Voltar', root_path %>
+<%= link_to 'Voltar', root_path, class: "btn btn-outline-primary" %>
