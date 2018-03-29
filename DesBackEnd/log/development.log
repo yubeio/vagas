@@ -8725,3 +8725,289 @@ Processing by ProcessosController#index as HTML
 Completed 200 OK in 148ms (Views: 143.7ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-29 16:28:39 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 924ms (Views: 912.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-29 16:28:42 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 174ms (Views: 170.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/clientes" for 127.0.0.1 at 2018-03-29 16:28:45 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb within layouts/application
+  [1m[36mCliente Load (1.5ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  [1m[36mProcesso Load (0.4ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered clientes/index.html.erb within layouts/application (114.6ms)
+Completed 200 OK in 277ms (Views: 246.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/INFO/ROUTES" for 127.0.0.1 at 2018-03-29 16:28:59 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/INFO/ROUTES"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/rails/info/routes?path=re" for 127.0.0.1 at 2018-03-29 16:29:03 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"re"}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=reg" for 127.0.0.1 at 2018-03-29 16:29:04 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"reg"}
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/INFO/ROUTES" for 127.0.0.1 at 2018-03-29 16:30:14 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/INFO/ROUTES"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/rails/info/routes?path=reg" for 127.0.0.1 at 2018-03-29 16:30:17 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"reg"}
+Completed 200 OK in 5ms (Views: 0.7ms)
+
+
+Started GET "/rails/info/routes?path=reg" for 127.0.0.1 at 2018-03-29 16:30:18 -0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"reg"}
+Completed 200 OK in 3ms (Views: 0.5ms)
+
+
+Started GET "/clientes" for 127.0.0.1 at 2018-03-29 16:30:53 -0300
+Processing by ClientesController#index as HTML
+  Rendering clientes/index.html.erb within layouts/application
+  [1m[36mCliente Load (0.5ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  [1m[36mProcesso Load (0.4ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered clientes/index.html.erb within layouts/application (63.4ms)
+Completed 200 OK in 153ms (Views: 142.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-29 16:31:11 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 129ms (Views: 126.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/registros" for 127.0.0.1 at 2018-03-29 16:31:12 -0300
+Processing by RegistrosController#index as HTML
+  Rendering registros/index.html.erb within layouts/application
+  Rendered registros/index.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:   </thead>
+    16: 
+    17:   <tbody>
+    18:   <% @processos.each do |processo| %>
+    19:       <tr>
+    20:         <td><%= processo.nome %></td>
+    21:         <td><%= processo.descricao %></td>
+  
+app/views/registros/index.html.erb:18:in `_app_views_registros_index_html_erb___3159670787657289009_70111484834800'
+Started GET "/registros" for 127.0.0.1 at 2018-03-29 16:33:03 -0300
+Processing by RegistrosController#index as HTML
+  Rendering registros/index.html.erb within layouts/application
+  [1m[36mProcesso Load (0.8ms)[0m  [1m[34mSELECT "processos".* FROM "processos"[0m
+  [1m[36mCliente Load (0.5ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  [1m[36mProcesso Load (0.4ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered registros/index.html.erb within layouts/application (159.0ms)
+Completed 200 OK in 266ms (Views: 252.9ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2018-03-29 16:33:15 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 111ms (Views: 108.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/registros" for 127.0.0.1 at 2018-03-29 16:33:37 -0300
+Processing by RegistrosController#index as HTML
+  Rendering registros/index.html.erb within layouts/application
+  [1m[36mProcesso Load (0.4ms)[0m  [1m[34mSELECT "processos".* FROM "processos"[0m
+  [1m[36mCliente Load (0.5ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered registros/index.html.erb within layouts/application (87.2ms)
+Completed 200 OK in 177ms (Views: 170.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2018-03-29 16:33:42 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 131ms (Views: 128.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/registros" for 127.0.0.1 at 2018-03-29 16:34:16 -0300
+Processing by RegistrosController#index as HTML
+  Rendering registros/index.html.erb within layouts/application
+  [1m[36mProcesso Load (0.5ms)[0m  [1m[34mSELECT "processos".* FROM "processos"[0m
+  [1m[36mCliente Load (0.8ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.4ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered registros/index.html.erb within layouts/application (81.8ms)
+Completed 200 OK in 167ms (Views: 160.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/registros" for 127.0.0.1 at 2018-03-29 16:35:46 -0300
+Processing by RegistrosController#index as HTML
+  Rendering registros/index.html.erb within layouts/application
+  [1m[36mProcesso Load (0.6ms)[0m  [1m[34mSELECT "processos".* FROM "processos"[0m
+  [1m[36mCliente Load (0.8ms)[0m  [1m[34mSELECT "clientes".* FROM "clientes"[0m
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.1ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.4ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.4ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.3ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Processo Load (0.0ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProcesso Load (0.2ms)[0m  [1m[34mSELECT  "processos".* FROM "processos" WHERE "processos"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered registros/index.html.erb within layouts/application (82.4ms)
+Completed 200 OK in 175ms (Views: 168.2ms | ActiveRecord: 3.9ms)
+
+
