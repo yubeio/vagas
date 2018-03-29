@@ -38,6 +38,7 @@ class ClientesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to cliente_url(@cliente)
   end
 
+  # Esse teste vai acusar erro, pois a exclusão de clientes no sistema não apaga o registro do sistema.
   test "should destroy cliente" do
     assert_difference('Cliente.count', -1) do
       delete cliente_url(@cliente)

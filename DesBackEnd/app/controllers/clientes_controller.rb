@@ -29,7 +29,7 @@ class ClientesController < ApplicationController
 
     respond_to do |format|
       if @cliente.save
-        format.html { redirect_to @cliente, notice: 'Cliente foi Criado com Sucesso.' }
+        format.html { redirect_to @cliente, notice: 'Cliente foi Criado com Sucesso.', class: "alert alert-success", role: "alert" }
         format.json { render :show, status: :created, location: @cliente }
       else
         format.html { render :new }

@@ -14,10 +14,13 @@ class ProcessosController < ApplicationController
   # GET /processos/new
   def new
     @processo = Processo.new
+    options_for_select
   end
 
   # GET /processos/1/edit
-  def edit; end
+  def edit
+    options_for_select
+  end
 
   # POST /processos
   # POST /processos.json
@@ -26,7 +29,7 @@ class ProcessosController < ApplicationController
 
     respond_to do |format|
       if @processo.save
-        format.html { redirect_to @processo, notice: 'Processo was successfully created.' }
+        format.html { redirect_to @processo, notice: 'Processo foi criado com sucesso.' }
         format.json { render :show, status: :created, location: @processo }
       else
         format.html { render :new }
@@ -40,7 +43,7 @@ class ProcessosController < ApplicationController
   def update
     respond_to do |format|
       if @processo.update(processo_params)
-        format.html { redirect_to @processo, notice: 'Processo was successfully updated.' }
+        format.html { redirect_to @processo, notice: 'Processo foi atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @processo }
       else
         format.html { render :edit }
@@ -54,12 +57,16 @@ class ProcessosController < ApplicationController
   def destroy
     destroyReg
     respond_to do |format|
-      format.html { redirect_to processos_url, notice: 'Processo was successfully destroyed.' }
+      format.html { redirect_to processos_url, notice: 'Processo foi apagado com sucesso.' }
       format.json { head :no_content }
     end
   end
 
   private
+
+  def options_for_select
+    @situacao_options_for_select = [["Pendente", "Pendente"], ["Aprovado", "Aprovado"], ["Rejeitado", "Rejeitado"]]
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_processo

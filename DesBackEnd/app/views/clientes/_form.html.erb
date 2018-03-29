@@ -1,42 +1,42 @@
-<%= form_with(model: cliente, local: true) do |form| %>
-  <% if cliente.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+<div align="center">
+  <h1>Clientes</h1>
+  <%= form_with(model: cliente, local: true) do |form| %>
+    <% if cliente.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger" role="alert">
+        <h2><%= pluralize(cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
 
-      <ul>
-      <% cliente.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% cliente.errors.full_messages.each do |message| %>
+          <li><%= message %></li><span class="help-block">help</span>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= form.label :cnpj, class:"col-md-4 control-label" %>
+        <%= form.text_field :cnpj, id: :cliente_cnpj, placeholder:"00.000.000/0000-00", class:"form-control" %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= form.label :razao_social %>
+        <%= form.text_field :razao_social, id: :cliente_razao_social, class: "form-control", placeholder: "Exemplo" %>
+      </div>
     </div>
-  <% end %>
+    <div class="form-group">
+      <%= form.label :num_funcionarios %>
+      <%= form.number_field :num_funcionarios, id: :cliente_num_funcionarios, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :processo_id %>
+      <%= collection_select(:cliente, :processo_id, @processo_options_for_select, :id, :descricao, {}, {class: "custom-select mr-sm-2"}) %>
+    </div>
+    <div class="form-group">
+      <%= form.label :status %>
+      <%= form.number_field :status, id: :cliente_status, value: '1', :readonly => true, class:"form-control"%>
+    </div>
+    <%= form.submit "Cadastrar", class:"btn btn-primary" %>
+    <%= link_to 'Voltar', clientes_path, class:"btn btn-primary" %>
 
-  <div class="field">
-    <%= form.label :cnpj %>
-    <%= form.text_field :cnpj, id: :cliente_cnpj %>
-  </div>
-
-  <div class="field">
-    <%= form.label :razao_social %>
-    <%= form.text_field :razao_social, id: :cliente_razao_social %>
-  </div>
-
-  <div class="field">
-    <%= form.label :num_funcionarios %>
-    <%= form.number_field :num_funcionarios, id: :cliente_num_funcionarios %>
-  </div>
-
-  <div class="field">
-    <%= form.label :processo_id %>
-    <%= collection_select(:cliente, :processo_id, @processo_options_for_select, :id, :descricao) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status, id: :cliente_status, value: '1', :readonly => true%>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
+</div>

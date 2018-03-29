@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
+<div align="center">
+  <h1>Processos</h1>
+</div>
 
-<p>
+<h2>
   <strong>Nome:</strong>
   <%= @processo.nome %>
-</p>
+</h2>
 
 <p>
   <strong>Descrição:</strong>
@@ -15,5 +18,5 @@
   <%= @processo.situacao %>
 </p>
 
-<%= link_to 'Editar', edit_processo_path(@processo) %> |
-<%= link_to 'Voltar', processos_path %>
+<%= link_to 'Editar', edit_processo_path(@processo), class: "btn btn-primary" %>
+<%= link_to 'Voltar', processos_path, class: "btn btn-primary" %>

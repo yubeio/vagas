@@ -38,6 +38,7 @@ class ProcessosControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to processo_url(@processo)
   end
 
+  # Esse teste vai acusar erro, pois a exclusão de clientes no sistema não apaga o registro do sistema.
   test "should destroy processo" do
     assert_difference('Processo.count', -1) do
       delete processo_url(@processo)
