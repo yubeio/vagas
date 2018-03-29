@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<div align="center">
+  <h1>Clientes</h1>
+</div>
+
+<h2>
+  <strong>Razão Social:</strong>
+  <%= @cliente.razao_social %>
+</h2>
+
+<p>
+  <strong>CNPJ:</strong>
+  <%= @cliente.cnpj %>
+</p>
+
+<p>
+  <strong>Número Funcionarios:</strong>
+  <%= @cliente.num_funcionarios %>
+</p>
+
+<p>
+  <strong>Processo:</strong>
+  <%= @cliente.processo.descricao %>
+</p>
+
+<%= link_to 'Editar', edit_cliente_path(@cliente), class: "btn btn-primary"%>
+<%= link_to 'Voltar', clientes_path, class: "btn btn-primary" %>

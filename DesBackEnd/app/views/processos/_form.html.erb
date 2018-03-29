@@ -1,0 +1,43 @@
+<div align="center">
+  <h1>Processos</h1>
+  <%= form_with(model: processo, local: true) do |form| %>
+    <% if processo.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(processo.errors.count, "error") %> prohibited this processo from being saved:</h2>
+
+        <ul>
+        <% processo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <div class="form-group">
+      <%= form.label :nome, class:"control-label"%>
+      <%= form.text_field :nome, id: :processo_nome, placeholder:"Exemplo", class:"form-control" %>
+    </div>
+
+
+    <div class="form-group">
+      <%= form.label :descricao, class:"control-label" %>
+      <%= form.text_area :descricao, id: :processo_descricao, placeholder: "Exemplo", class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :situacao %>
+      <%= form.select(:situacao, @situacao_options_for_select, {}, {class:"custom-select mr-sm-2"}) %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :status %>
+      <%= form.number_field :status, id: :processo_status, value: '1', :readonly => true, class:"form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Cadastrar", class:"btn btn-primary" %>
+      <%= link_to 'Voltar', processos_path, class:"btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

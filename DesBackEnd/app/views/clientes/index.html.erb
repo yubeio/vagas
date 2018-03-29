@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<div align="center" class="h1">
+  <h1 class="h1">Clientes</h1>
+</div>
+
+<table class="table table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>CNPJ</th>
+      <th>Razão Social</th>
+      <th>Numero Funcionarios</th>
+      <th>Processo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <% if cliente.status == 1 %>
+        <tr>
+          <td><%= cliente.cnpj %></td>
+          <td><%= cliente.razao_social %></td>
+          <td><%= cliente.num_funcionarios %></td>
+          <td><%= cliente.processo.descricao %></td>
+          <td><%= link_to 'Mostrar', cliente, class: "btn btn-success" %></td>
+          <td><%= link_to 'Editar', edit_cliente_path(cliente), class: "btn btn-warning" %></td>
+          <td><%= link_to 'Apagar', cliente, method: :delete, data: { confirm: 'Você tem certeza?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div align="center">
+  <%= link_to 'Home', home_index_path, class: "btn btn-primary" %>
+  <%= link_to 'Novo Cliente', new_cliente_path, class: "btn btn-primary" %>
+</div>
