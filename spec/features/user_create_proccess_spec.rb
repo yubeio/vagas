@@ -19,7 +19,7 @@ feature 'User create a proccess' do
     
   end
 
-  xscenario 'and have fill all fields' do 
+  scenario 'and have fill all fields' do 
     Client.create(cnpj: '123.456.789-00', razao_social: 'alura ltda', n_funcionarios: 10) 
     visit root_path
 
@@ -28,6 +28,8 @@ feature 'User create a proccess' do
 
     fill_in 'Nome', with: ''
     fill_in 'Descrição', with: ''
+
+    click_on 'Salvar'
 
     expect(page).to have_css('h3', text: 'Você precisa preencher todos os campos')
   end
