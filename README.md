@@ -4,8 +4,7 @@
 ruby 2.3.6p384
 
 * Configuration
-chmod 777 db -R
-chmod 777 tmp -R
+git clone git@github.com:praganavictor/vagas-1.git
 bundle install
 
 * Database initialization
@@ -13,11 +12,12 @@ rails db:migrate
 
 * How to run the test suite
 rspec
+rubocop
 
 * Deployment instructions
-Queria implementar um CI, mas não deu tempo pensei em usar jenkins
-Você pode ver a aplicação rodando no link: http://cpro42238.publiccloud.com.br/
+rails db:migrate
+rails s
 
-* Não consegui implementar a validação de campos nulos do formulario de adição do processo
+Você pode ver a aplicação rodando no link: http://cpro42238.publiccloud.com.br/
 
 * ...
