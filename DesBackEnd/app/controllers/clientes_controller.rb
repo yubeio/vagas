@@ -18,7 +18,9 @@ class ClientesController < ApplicationController
   end
 
   # GET /clientes/1/edit
-  def edit; end
+  def edit
+    options_for_select
+  end
 
   # POST /clientes
   # POST /clientes.json
