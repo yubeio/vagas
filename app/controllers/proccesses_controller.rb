@@ -22,7 +22,8 @@ class ProccessesController < ApplicationController
 
   def update
     @client = Client.find(params[:client_id])
-    if @proccess = @client.proccess.update(proccess_params) 
+    @proccess = Proccess.find(params[:id])
+    if @proccess = @proccess.update(proccess_params) 
       flash[:success] = "Processo cadastrado com sucesso"
       redirect_to client_path(@client)
     else

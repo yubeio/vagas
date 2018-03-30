@@ -24,9 +24,8 @@ class ClientsController < ApplicationController
   end
 
   def update
-    id = params[:id]
-    @client = Client.find(id)
-    if @client = Client.update(client_params)
+    @client = Client.find(params[:id])
+    if @client = @client.update(client_params)
       redirect_to root_path
     else
       render 'new'
