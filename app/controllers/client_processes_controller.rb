@@ -21,7 +21,7 @@ class ClientProcessesController < ApplicationController
   end
 
   def destroy
-    @client_process.destroy
+    @client_process.update(:disabled => true)
     head :no_content
   end
 

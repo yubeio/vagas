@@ -3,5 +3,19 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+  client = Client.create([
+    {
+      cnpj: '60.998.878/0001-90',
+      razao_social: 'Cliente teste',
+      total_employee: 20,
+      total_process: 1
+    }
+  ])
+
+  clientProcess = ClientProcess.create([
+    {
+      name: 'Processo 1',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+      process_status: 1,
+    }
+  ])

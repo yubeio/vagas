@@ -1,24 +1,37 @@
-# README
+# YUBE VAGA BACK END
+Olá, tudo bem com todos? Segue o passo a passo para executar o projeto
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## VERSÕES | PRÉ-REQUISITOS
+Versões utilizadas:
+* Ruby 2.3.1
+* Rails 5.1.5
+* Mysql
 
-Things you may want to cover:
+## COMO RODAR
+Primeiramente deve-se executar um bundle install caso não tenha as gems instaladas. (Também)
 
-* Ruby version
+### INSTALAÇÃO
+Após instalar todas as gems o projeto ja deverá estar pronto para rodar, foram criados diversos endpoints para serem consumidos pela API e também os testes unitários dos mesmos.
 
-* System dependencies
+O Banco de dados de testes é automaticamente populado e também apagado em cada execução dos testes.
 
-* Configuration
+Primeiramente precisamos criar os bancos de dados, para isso rode:
+```
+rails db:create
+```
+Após a criação do banco de dados de desenvolvimento e de testes iremos criar um conteúdo para o de desenvolvimento apenas para ter alguma informação
+```
+rails db:seed
+```
+Com os bancos de dados criados e funcionais ja podemos rodar os testes
+```
+bundle exec rspec
+```
 
-* Database creation
+Após a verificação dos testes podemos ver que a API está funcional e ja pode ser consumida, para simular um ambiente de desenvolvimento você pode iniciar o servidor
+```
+rails s
+```
+e após isso utilizar algum cliente http para testar as requisições (recomendo usar o postman).
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Eu inicie também o desenvolvimento do deploy utilizando o capistrano mas ainda está para finalizar, então vou adicionar como um TODO :)

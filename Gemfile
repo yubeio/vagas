@@ -8,8 +8,10 @@ end
 gem 'rails', '~> 5.1.5'
 gem 'puma', '~> 3.7'
 gem 'mysql2', '~> 0.4.4'
-# gem 'jbuilder', '~> 2.5'
-# gem 'rack-cors'
+
+group :development do
+  gem 'capistrano'
+end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'

@@ -45,7 +45,7 @@ RSpec.describe 'Client API', type: :request do
 
       it 'Mensagem de erro' do
         expect(response.body)
-        .to match(/Validation failed: Total employee can&#39;t be blank/)
+        .to match(/{\"message\":\"Validation failed: Total employee can't be blank\"}/)
       end
     end
   end

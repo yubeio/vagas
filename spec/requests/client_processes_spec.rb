@@ -68,7 +68,7 @@ RSpec.describe 'ClientProcess API', type: :request do
     before { put "/clients/#{client_id}/client_processes/#{id}", params: valid_attributes }
 
     context 'Quando existe um processo' do
-      it 'returns status code 204' do
+      it 'Http status 204' do
         expect(response).to have_http_status(204)
       end
 
