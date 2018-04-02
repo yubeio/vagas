@@ -1,0 +1,19 @@
+
+<%= form_for([@client, @proccess]) do |f| %>
+  <% if @proccess.errors.any? %>
+   <h3>Você precisa preencher todos os campos</h3>
+    <% @proccess.errors.full_messages.each do |msg| %>
+      <p><%= msg %></P>
+    <% end %>
+  <% end %>
+  <div class="form-group">
+  <%= f.label :name, 'Nome' %>
+  <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+  <%= f.label :description, 'Descrição' %>
+  <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <%= f.submit 'Salvar', class: "btn btn-outline-primary"%>
+  <%= link_to 'Voltar', client_path(@client), class: "btn btn-outline-primary" %>
+<% end %>
