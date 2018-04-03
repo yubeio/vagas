@@ -54,6 +54,6 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.permit(:name, :employees_number, :cnpj, :processes_number)
+    params.permit(:name, :employees_quantity, :cnpj)
   end
 end
