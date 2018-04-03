@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :company do
-    name 'vinylimazOP'
-    cnpj 86899939000155
+    name Faker::Company.name
+    cnpj Faker::CNPJ.unique.numeric
     employees_number 112
     processes_number 12
   end

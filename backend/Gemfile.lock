@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/VinyLimaZ/faker.git
+  revision: 41557841701f83a0c11d5b8ff3e877298e41ac2c
+  specs:
+    faker (1.8.7)
+      i18n (>= 0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -187,6 +194,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   cpf_cnpj
   factory_bot_rails
+  faker!
   listen (>= 3.0.5, < 3.2)
   pg
   pry-byebug
