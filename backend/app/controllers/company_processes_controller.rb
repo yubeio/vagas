@@ -14,9 +14,10 @@ class CompanyProcessesController < ApplicationController
     @process = @company.company_processes.build(process_params)
 
     if @process.save
-      render json: { message: 'Success', status: :ok }
+      render json: { message: I18n.t('company_process.success.created'), status: :ok }
     else
-      render json: { message: @process.errors.full_messages, status: :bad_request }
+      render json: { message: I18n.t('company_process.failure.created'),
+                     details: @process.errors.full_messages, status: :bad_request }
     end
   end
 
@@ -24,7 +25,7 @@ class CompanyProcessesController < ApplicationController
     if @process.update_attributes(process_params)
       render json: { message: I18n.t('company_process.success.updated'), status: :ok }
     else
-      render json: { message: I18n.t('company_process.failure.update'), status: :bad_request }
+      render json: { message: I18n.t('company_process.failure.updated'), status: :bad_request }
     end
   end
 
@@ -38,9 +39,9 @@ class CompanyProcessesController < ApplicationController
 
   def destroy
     if @process.destroy
-      render json: { message: I18n.t('company_process.success.destroy'), status: :ok }
+      render json: { message: I18n.t('company_process.success.deleted'), status: :ok }
     else
-      render json: { message: I18n.t('company_process.failure.destroy'), status: :bad_request }
+      render json: { message: I18n.t('company_process.failure.deleted'), status: :bad_request }
     end
   end
 

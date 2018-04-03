@@ -8,25 +8,25 @@ describe CompanyProcess, type: :model do
   end
 
   context '#update_status' do
-    let!(:company_process) { create(:company_process) }
+    subject do
+      create(:company_process).tap do |cp|
+        cp.update_status(status)
+      end.reload
+    end
 
-    context 'status is valid' do
+    context 'valid status' do
       let(:status) { "accepted" }
-      let(:company) { create(:company, cnpj: Faker::CNPJ.unique.numeric) }
-      subject do
-        create(:company_process, company: company).tap do |cp|
-          cp.update_status(status)
-        end.reload
-      end
 
       it 'update it' do
-        subject.tap { |cp| cp.update_status(status) }.reload
         expect(subject.status).to eq 'accepted'
       end
+    end
 
-      after do
-        Company.unscoped.each(&:destroy)
-        CompanyProcess.all.each(&:destroy)
+    context 'invalid status' do
+      let(:status) { "invalid" }
+      let(:error_message) { "Status can't be updated!" }
+      it 'return a error message' do
+        expect(subject.errors.full_messages).to include(error_message)
       end
     end
   end
