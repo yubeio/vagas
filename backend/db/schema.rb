@@ -10,16 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_02_144529) do
+ActiveRecord::Schema.define(version: 2018_04_03_154409) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "cnpj"
-    t.integer "employees_number"
-    t.integer "processes_number"
+    t.integer "employees_quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0
+  end
+
+  create_table "company_processes", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "status", default: 0
+    t.integer "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_company_processes_on_company_id"
   end
 
 end

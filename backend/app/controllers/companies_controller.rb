@@ -28,7 +28,7 @@ class CompaniesController < ApplicationController
     begin
       company = Company.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      render(json: { message: I18n.t('company.errors.not_found'), status: :not_found }) and return
+      render(json: { message: I18n.t('company.errors.not_found'), status: :not_found }) && (return)
     end
 
     if company.update_attributes(company_params)
@@ -43,7 +43,7 @@ class CompaniesController < ApplicationController
     begin
       company = Company.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      render(json: { message: I18n.t('company.errors.not_found'), status: :not_found }) and return
+      render(json: { message: I18n.t('company.errors.not_found'), status: :not_found }) && (return)
     end
 
     company.deleted!
@@ -54,6 +54,6 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.permit(:name, :employees_number, :cnpj, :processes_number)
+    params.permit(:name, :employees_quantity, :cnpj)
   end
 end

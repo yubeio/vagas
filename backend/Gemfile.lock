@@ -200,7 +200,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 3.11)
-  rails (~> 5.2.0.rc2)
+  rails
   rspec-rails
   rubocop
   shoulda-matchers
