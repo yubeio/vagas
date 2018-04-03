@@ -15,7 +15,7 @@ describe CompanyProcess, type: :model do
     end
 
     context 'valid status' do
-      let(:status) { "accepted" }
+      let(:status) { 'accepted' }
 
       it 'update it' do
         expect(subject.status).to eq 'accepted'
@@ -23,7 +23,7 @@ describe CompanyProcess, type: :model do
     end
 
     context 'invalid status' do
-      let(:status) { "invalid" }
+      let(:status) { 'invalid' }
       let(:error_message) { "Status can't be updated!" }
       it 'return a error message' do
         expect(subject.errors.full_messages).to include(error_message)

@@ -1,6 +1,6 @@
 class CompanyProcessesController < ApplicationController
   before_action :set_company_process, only: %i[show update destroy update_status]
-  before_action :set_company, only: [:index, :create]
+  before_action :set_company, only: %i[index create]
 
   def index
     render json: { processes: @company.company_processes, status: :ok }
@@ -48,19 +48,15 @@ class CompanyProcessesController < ApplicationController
   private
 
   def set_company
-    begin
-      @company = Company.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      render json: { message: I18n.t('company.errors.not_found'), status: :not_found }
-    end
+    @company = Company.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render json: { message: I18n.t('company.errors.not_found'), status: :not_found }
   end
 
   def set_company_process
-    begin
-      @process = CompanyProcess.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      render json: { message: I18n.t('company_process.errors.not_found'), status: :not_found } and return
-    end
+    @process = CompanyProcess.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render(json: { message: I18n.t('company_process.errors.not_found'), status: :not_found }) && (return)
   end
 
   def process_params

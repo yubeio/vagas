@@ -7,7 +7,7 @@ class CompanyProcess < ApplicationRecord
 
   def update_status(status)
     if status_valid?(status)
-      status << '!' and self.send(status)
+      status << '!' && send(status)
     else
       errors.add(:base, I18n.t('company_process.failure.status_updated'))
     end
@@ -15,7 +15,7 @@ class CompanyProcess < ApplicationRecord
 
   private
 
-  def status_valid? status
+  def status_valid?(status)
     self.class.statuses.include? status
   end
 end

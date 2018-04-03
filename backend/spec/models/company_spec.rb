@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 describe Company, type: :model do
@@ -36,7 +37,7 @@ describe Company, type: :model do
     let!(:process_one) { create(:company_process, company: company) }
     let!(:process_two) { create(:company_process, company: company) }
 
-    subject{ company.processes_quantity }
+    subject { company.processes_quantity }
 
     it { is_expected.to be 2 }
   end
