@@ -19,7 +19,6 @@ class Company < ApplicationRecord
   end
 
   def cnpj_valid?
-    binding.pry
     if CNPJ.valid?(cnpj, strict: true)
       self.cnpj = CNPJ.new(cnpj).stripped
     else
