@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class CompaniesController < ApplicationController
+  before_action :set_company, only: [:show, :update, :destroy]
+
   def index
     render json: { companies: Company.all, status: :ok }
   end
@@ -10,50 +12,39 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    render json: { company: Company.where(id: params[:id]), status: :ok }
+    render json: { company: @company, status: :ok }
   end
 
   def create
     company = Company.new(company_params)
 
     if company.save
-      render json: { message: I18n.t('company.success.created'), status: :ok }
+      success_render('company.success.created')
     else
-      render json: { message: I18n.t('company.failure.created'),
-                     details: company.errors.full_messages, status: :bad_request }
+      failure_render('company.failure.created', company)
     end
   end
 
   def update
-    begin
-      company = Company.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      render(json: { message: I18n.t('company.errors.not_found'), status: :not_found }) && (return)
-    end
-
-    if company.update_attributes(company_params)
-      render json: { message: I18n.t('company.success.updated'), status: :ok }
+    if @company.update_attributes(company_params)
+      success_render('company.success.updated')
     else
-      render json: { message: I18n.t('company.failure.updated'),
-                     details: company.errors.full_messages, status: :bad_request }
+      failure_render('company.failure.updated', @company)
     end
   end
 
   def destroy
-    begin
-      company = Company.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      render(json: { message: I18n.t('company.errors.not_found'), status: :not_found }) && (return)
-    end
-
-    company.deleted!
-
-    render json: { message: I18n.t('company.success.deleted'), status: :ok }
+    @company.deleted!
+    success_render('company.success.deleted')
   end
 
   private
 
+  def set_company
+      @company = Company.find(params[:id])
+  end
+
   def company_params
-    params.permit(:name, :employees_quantity, :cnpj)
+    params.require(:company).permit(:name, :employees_quantity, :cnpj)
   end
 end

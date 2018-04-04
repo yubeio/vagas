@@ -11,59 +11,54 @@ class CompanyProcessesController < ApplicationController
   end
 
   def create
-    @process = @company.company_processes.build(process_params)
+    process = @company.company_processes.build(process_params)
 
-    if @process.save
-      render json: { message: I18n.t('company_process.success.created'), status: :ok }
+    if process.save
+      success_render('company_process.success.created')
     else
-      render json: { message: I18n.t('company_process.failure.created'),
-                     details: @process.errors.full_messages, status: :bad_request }
+      failure_render('company_process.failure.created', process)
     end
   end
 
   def update
     if @process.update_attributes(process_params)
-      render json: { message: I18n.t('company_process.success.updated'), status: :ok }
+      success_render('company_process.success.updated')
     else
-      render json: { message: I18n.t('company_process.failure.updated'), status: :bad_request }
+      failure_render('company_process.failure.updated', @process)
     end
   end
 
   def update_status
     if @process.update_status(status_params) == true
-      render json: { message: I18n.t('company_process.success.status_updated'), status: :ok }
+      success_render('company_process.success.status_updated')
     else
-      render json: { message: I18n.t('company_process.failure.status_updated'), status: :bad_request }
+      failure_render('company_process.failure.status_updated', @process)
     end
   end
 
   def destroy
     if @process.destroy
-      render json: { message: I18n.t('company_process.success.deleted'), status: :ok }
+      success_render('company_process.success.deleted')
     else
-      render json: { message: I18n.t('company_process.failure.deleted'), status: :bad_request }
+      failure_render('company_process.failure.deleted', @process)
     end
   end
 
   private
 
   def set_company
-    @company = Company.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    render json: { message: I18n.t('company.errors.not_found'), status: :not_found }
+    @company = Company.find(params[:company_id])
   end
 
   def set_company_process
     @process = CompanyProcess.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    render(json: { message: I18n.t('company_process.errors.not_found'), status: :not_found }) && (return)
   end
 
   def process_params
-    params.permit(:name, :description)
+    params.require(:company_process).permit(:name, :description)
   end
 
   def status_params
-    params.permit(:status)
+    params.require(:company_process).permit(:status)
   end
 end

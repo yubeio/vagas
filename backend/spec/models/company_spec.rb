@@ -3,6 +3,11 @@
 require 'rails_helper'
 
 describe Company, type: :model do
+  context 'has a valid factory' do
+    subject{ build(:company).class }
+    it { is_expected.to be described_class }
+  end
+
   context ':validates' do
     %w[name cnpj employees_quantity].each do |attribute|
       it { is_expected.to validate_presence_of(attribute) }
