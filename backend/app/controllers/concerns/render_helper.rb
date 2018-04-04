@@ -6,6 +6,6 @@ module RenderHelper
   def failure_render(locale, object)
     render json: { message: I18n.t(locale),
                    details: object.errors.full_messages || '',
-                   status: :bad_request } and return
+                   status: :not_acceptable }, status: :not_acceptable and return
   end
 end

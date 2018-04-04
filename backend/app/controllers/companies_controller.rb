@@ -40,16 +40,6 @@ class CompaniesController < ApplicationController
 
   private
 
-  def success_render(locale)
-    render json: { message: I18n.t(locale), status: :ok } and return
-  end
-
-  def failure_render(locale, company)
-    render json: { message: I18n.t(locale),
-                   details: company.errors.full_messages || '',
-                   status: :bad_request } and return
-  end
-
   def set_company
       @company = Company.find(params[:id])
   end
