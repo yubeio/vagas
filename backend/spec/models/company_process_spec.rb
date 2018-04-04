@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 describe CompanyProcess, type: :model do
+  context 'has a valid factory' do
+    subject{ build(:company_process).class }
+    it { is_expected.to be described_class }
+  end
+
   context ':validates' do
     %w[name description].each do |attribute|
       it { is_expected.to validate_presence_of(attribute) }

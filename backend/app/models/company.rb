@@ -15,7 +15,7 @@ class Company < ApplicationRecord
   enum status: %i[active deleted]
 
   def processes_quantity
-    company_processes.count
+    @processes_quantity ||= company_processes.count
   end
 
   private
