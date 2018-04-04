@@ -11,12 +11,12 @@ class CompanyProcessesController < ApplicationController
   end
 
   def create
-    @process = @company.company_processes.build(process_params)
+    process = @company.company_processes.build(process_params)
 
-    if @process.save
+    if process.save
       success_render('company_process.success.created')
     else
-      failure_render('company_process.failure.created', @process)
+      failure_render('company_process.failure.created', process)
     end
   end
 
@@ -47,7 +47,7 @@ class CompanyProcessesController < ApplicationController
   private
 
   def set_company
-    @company = Company.find(params[:id])
+    @company = Company.find(params[:company_id])
   end
 
   def set_company_process

@@ -1,11 +1,13 @@
 class CompanyProcess < ApplicationRecord
-  validates_presence_of %i[name description]
-
   belongs_to :company
+
+  validates_presence_of %i[name description]
 
   enum status: %i[pending accepted rejected]
 
-  def update_status(status)
+  def update_status(params)
+    status = params[:status]
+
     if status_valid?(status)
       status << '!' and send(status)
     else

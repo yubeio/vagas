@@ -3,11 +3,11 @@
 class Company < ApplicationRecord
   before_save :cnpj_stripped
 
+  has_many :company_processes
+
   validates_presence_of :name, :cnpj, :employees_quantity
   validates_uniqueness_of :cnpj
   validate :cnpj_valid?
-
-  has_many :company_processes
 
   default_scope -> { Company.active }
   scope :all_with_deleted, -> { unscoped }

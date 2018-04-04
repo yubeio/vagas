@@ -51,12 +51,12 @@ describe CompaniesController do
     end
   end
 
-  context 'POST #update' do
+  context 'PUT #update' do
     let(:company_attr) { attributes_for(:company) }
     let(:success_message) { '"Register updated with success!' }
 
     it 'with success' do
-      post :update, params: { id: 1, company: company_attr }
+      put :update, params: { id: 1, company: company_attr }
       expect(response.body).to include success_message
       expect(response.status).to be 200
     end
@@ -67,7 +67,7 @@ describe CompaniesController do
     let(:failure_message) { 'found unpermitted parameter: :cpj' }
 
     it 'with failure' do
-      patch :update, params: { id: 1, company: invalid_company_attr }
+      put :update, params: { id: 1, company: invalid_company_attr }
       expect(response.body).to include failure_message
     end
   end
