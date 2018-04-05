@@ -1,4 +1,5 @@
 [![Build Status](https://semaphoreci.com/api/v1/vinylimaz/vagas/branches/master/badge.svg)](https://semaphoreci.com/vinylimaz/vagas)
+![Coverage](backend/coverage/coverage.svg "coverage")
 
 ## What are all this shit?
 
@@ -7,9 +8,9 @@ brought to me :D
 
 ## Versions
 * Ruby version
--	2.4.3
+2.4.3
 * Rails version
--	5.1.6
+5.1.6
 
 # How to?
 
@@ -40,5 +41,6 @@ The `CompanyProcess` has a action and a method to update its status: `#update_st
 
 I created 2 helpers for controllers, to DRY some things:
 
-render_helper: To render success or failures
-exception_helper: To catch exceptions and render a specific json;
+`render_helper`: To render success or failures
+
+`exception_helper`: To catch exceptions and render a specific json;
