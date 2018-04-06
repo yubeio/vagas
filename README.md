@@ -1,5 +1,5 @@
 [![Build Status](https://semaphoreci.com/api/v1/vinylimaz/vagas/branches/master/badge.svg)](https://semaphoreci.com/vinylimaz/vagas)
-![Coverage](backend/coverage/coverage.svg "coverage")
+![Coverage](coverage/coverage.svg "coverage")
 
 ## What are all this shit?
 
