@@ -1,0 +1,28 @@
+en:
+  company:
+    success:
+      created: 'Register created with success!'
+      updated: "Register updated with success!"
+      deleted: "Register deleted with success!"
+    failure:
+      created: "Register can't be created!"
+      updated: "Register can't be updated!"
+    errors:
+      attributes:
+        cnpj:
+          invalid: 'CNPJ is invalid, please verify'
+      not_found: 'Register not found in our database'
+  company_process:
+    success:
+      created: 'Process created with success!'
+      updated: 'Process updated with success!'
+      deleted: 'Process deleted with success!'
+      status_updated: 'Status was updated with success!'
+    failure:
+      created: "Process can't be created!"
+      updated: "Process can't be updated!"
+      deleted: "Process can't be deleted!"
+      status_updated: "Status can't be updated!"
+    errors:
+      not_found: 'Process not found in our database'
+
